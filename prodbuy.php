@@ -69,7 +69,7 @@ echo "</p>";
 }
 echo "</table>";
 
-', j-o bj0t
+
 //display random text
 
 include("footfile.html"); //include head layout
