@@ -86,6 +86,8 @@ echo "</table>";
 
 echo "<br><p><a href='clearbasket.php'>CLEAR BASKET</a></p>";
 
+echo "<br><p>New homteq customers: <a href='signup.php'>Sign up</a></p>";
+
 // //if the posted ID of the new product is set i.e. if the user is adding a new product into the basket
 // if (isset($_POST['h_prodid']))
 // { 
