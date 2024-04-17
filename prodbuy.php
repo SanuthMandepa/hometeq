@@ -33,10 +33,15 @@ echo "</tr>";
 echo "</table>";
 
 echo "<br><p>Number to be purchased: ";
-//create form made of one text field and one button for user to enter quantity
+//create a form made of one drop-down menu and one button for user to enter quantity
 //the value entered in the form will be posted to the basket.php to be processed
 echo "<form action=basket.php method=post>";
-
+echo "<select name=p_quantity>";
+for ($i=1; $i<=$arrayp['prodQuantity']; $i++)
+{
+echo "<option value=".$i.">".$i."</option>";
+}
+echo "</select>";
 echo "<input type=submit name='submitbtn' value='ADD TO BASKET' id='submitbtn'>";
 //pass the product id to the next page basket.php as a hidden value
 echo "<input type=hidden name=h_prodid value=".$prodid.">";
