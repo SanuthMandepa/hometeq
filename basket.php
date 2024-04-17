@@ -1,6 +1,6 @@
 <?php
 include ("db.php"); //include db.php file to connect to DB
-$pagename="Smart Basket"; //Create and populate a variable called $pagename
+$pagename="smart basket"; //Create and populate a variable called $pagename
 echo "<link rel=stylesheet type=text/css href=mystylesheet.css>"; //Call in stylesheet
 echo "<title>".$pagename."</title>"; //display name of the page as window title
 echo "<body>";
@@ -16,6 +16,10 @@ $reququantity=$_POST['p_quantity'];
 echo "<p>Id of selected product: ".$newprodid;
 //Display quantity of selected product
 echo "<br>Quantity of selected product: ".$reququantity;
+//create a new cell in the basket session array. Index this cell with the new product id.
+//Inside the cell store the required product quantity 
+$_SESSION['basket'][$newprodid]=$reququantity;
+echo "<b><p>1 item added";
 include("footfile.html"); //include head layout
 echo "</body>";
 ?>
