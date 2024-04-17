@@ -77,7 +77,7 @@ if (isset($_SESSION['basket'])) {
         // Add form for removing items from the basket
         echo "<td>";
         echo "<form action='basket.php' method='post'>";
-        echo "<input type='submit' value='Remove'>";
+        echo "<button type='submit'>Remove</button>"; // Use a button element instead of an input type submit
         echo "<input type='hidden' name='del_prodid' value='" . $arrayp['prodId'] . "'>"; // Pass product ID to removeitem.php
         echo "</form>";
         echo "</td>";
