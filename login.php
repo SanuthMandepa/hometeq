@@ -1,21 +1,31 @@
 <?php
-$pagename="template"; //Create and populate a variable called $pagename
+session_start(); // Start the session
+$pagename="login"; //Create and populate a variable called $pagename
 echo "<link rel=stylesheet type=text/css href=mystylesheet.css>"; //Call in stylesheet
 echo "<title>".$pagename."</title>"; //display name of the page as window title
 echo "<body>";
 include ("headfile.html"); //include header layout file 
 echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
-//display random text
-echo "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-labore et dolore magna aliqua. Non consectetur a erat nam at lectus urna. Cras pulvinar mattis nunc sed 
-blandit libero volutpat sed cras. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. 
-Nunc consequat interdum varius sit. Nam aliquam sem et tortor consequat. Magna sit amet purus gravida. Non 
-sodales neque sodales ut etiam sit. Tortor consequat id porta nibh venenatis. Ornare arcu odio ut sem 
-nulla pharetra diam. Tincidunt ornare massa eget egestas purus. Pulvinar mattis nunc sed blandit libero 
-volutpat sed. Nulla malesuada pellentesque elit eget. Varius quam quisque id diam vel quam elementum 
-pulvinar. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Vestibulum lectus mauris ultrices 
-eros in. Faucibus in ornare quam viverra. Hac habitasse platea dictumst vestibulum rhoncus. Parturient 
-montes nascetur ridiculus mus. Dui accumsan sit amet nulla facilisi morbi tempus iaculis urna.";
+//create a HTML form to capture the user's email and pwd
+echo "<form action=login_process.php method=post>";
+echo "<table id='baskettable'>";
+    //create text field called l_email to capture user’s input for the email
+    echo "<tr>"; 
+        echo "<td>Email</td>";
+        echo "<td><input type=text name=l_email size=40></td>";
+    echo "</tr>";
+    //create text field called l_password to capture user’s input for the password
+    echo "<tr>"; 
+        echo "<td>Password</td>";
+        echo "<td><input type=password name=l_password size=40></td>";
+    echo "</tr>";
+    //create a submit button and reset button
+    echo "<tr>"; 
+        echo "<td><input type=submit value='Login' id='submitbtn'></td>";
+        echo "<td><input type=reset value='Clear Form' id='submitbtn'></td>";
+    echo "</tr>";
+echo "</table>";
+echo "</form>";
 include("footfile.html"); //include head layout
 echo "</body>";
 ?>
