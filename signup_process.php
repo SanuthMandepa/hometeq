@@ -9,6 +9,9 @@ echo "<body>";
 include ("headfile.html"); // Include header layout file
 echo "<h4>".$pagename."</h4>"; // Display page name
 
+// Create a regular expression variable for email validation
+$reg = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/";
+
 // Capture and trim the inputs from the signup form
 $fname = trim($_POST['r_firstname']);
 $lname = trim($_POST['r_lastname']);
@@ -32,13 +35,13 @@ if (empty($fname) || empty($lname) || empty($address) || empty($postcode) || emp
     echo "<br>Make sure you enter them correctly</p>";
     echo "<br><p>Go back to <a href='signup.php'>sign up</a></p>";
     echo "<br><br><br><br>";
-} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) { // Check if email is valid
+} elseif (!preg_match($reg, $email)) { // Check if the email matches the regular expression
     echo "<p><b>Sign-up failed!</b></p>";
     echo "<br><p>Email not valid";
     echo "<br>Make sure you enter a correct email address</p>";
     echo "<br><p>Go back to <a href='signup.php'>sign up</a></p>";
     echo "<br><br><br><br>";
-} else {
+}else {
     // Write SQL query to insert new user into Users table
     $SQL = "INSERT INTO Users (userType, userFName, userSName, userAddress, userPostCode, userTelNo, userEmail, userPassword)
             VALUES ('C', '$fname', '$lname', '$address', '$postcode', '$telno', '$email', '$password1')";
