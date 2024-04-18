@@ -54,6 +54,8 @@ if (empty($fname) || empty($lname) || empty($address) || empty($postcode) || emp
     } else {
         // Display sign up failure
         echo "<p><b>Sign-up failed!</b></p>";
+        //echo "<br><p>SQL Error No: ".mysqli_errno($conn)."</p>"; //Retrieve the error number and display. 
+        //echo "<p>SQL Error Msg: ".mysqli_error($conn)."</p>"; //Retrieve the error message and display. 
         
         // Handle specific error cases
         if (mysqli_errno($conn) === 1062) {
