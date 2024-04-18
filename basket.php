@@ -8,6 +8,8 @@ echo "<link rel=stylesheet type=text/css href=mystylesheet.css>"; // Call in sty
 echo "<title>" . $pagename . "</title>"; // Display name of the page as window title
 echo "<body>";
 include("headfile.html"); // Include header layout file
+include ("detectlogin.php");
+
 echo "<h4>" . $pagename . "</h4>"; // Display name of the page on the web page
 
 // Check if the value of the product id to be deleted (which was posted through the hidden field) is set
